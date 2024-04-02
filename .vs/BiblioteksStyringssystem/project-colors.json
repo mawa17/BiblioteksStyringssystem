@@ -5,7 +5,22 @@
       "ProjectGuid": "ae37c7d8-3407-4c17-9819-7512ad956186",
       "DisplayName": "BiblioteksStyringssystem",
       "ColorIndex": 0
+    },
+    "90d557fd-9754-4b24-8290-94b9e1c9e072": {
+      "ProjectGuid": "90d557fd-9754-4b24-8290-94b9e1c9e072",
+      "DisplayName": "ConsoleApp",
+      "ColorIndex": 1
+    },
+    "9c437c7b-c31e-47c9-ac43-b422b45af118": {
+      "ProjectGuid": "9c437c7b-c31e-47c9-ac43-b422b45af118",
+      "DisplayName": "ConsoleApp",
+      "ColorIndex": 2
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
     }
   },
-  "NextColorIndex": 1
+  "NextColorIndex": 3
 }
