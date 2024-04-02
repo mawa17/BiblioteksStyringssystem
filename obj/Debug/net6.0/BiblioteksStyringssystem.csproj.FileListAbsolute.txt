@@ -1,0 +1,9 @@
+C:\Users\marwa\Desktop\Opgaver\BiblioteksStyringssystem\obj\Debug\net6.0\BiblioteksStyringssystem.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\marwa\Desktop\Opgaver\BiblioteksStyringssystem\obj\Debug\net6.0\BiblioteksStyringssystem.csproj.CoreCompileInputs.cache
+C:\Users\marwa\Desktop\Opgaver\BiblioteksStyringssystem\bin\Debug\net6.0\BiblioteksStyringssystem.deps.json
+C:\Users\marwa\Desktop\Opgaver\BiblioteksStyringssystem\bin\Debug\net6.0\BiblioteksStyringssystem.dll
+C:\Users\marwa\Desktop\Opgaver\BiblioteksStyringssystem\bin\Debug\net6.0\ref\BiblioteksStyringssystem.dll
+C:\Users\marwa\Desktop\Opgaver\BiblioteksStyringssystem\bin\Debug\net6.0\BiblioteksStyringssystem.pdb
+C:\Users\marwa\Desktop\Opgaver\BiblioteksStyringssystem\obj\Debug\net6.0\BiblioteksStyringssystem.dll
+C:\Users\marwa\Desktop\Opgaver\BiblioteksStyringssystem\obj\Debug\net6.0\ref\BiblioteksStyringssystem.dll
+C:\Users\marwa\Desktop\Opgaver\BiblioteksStyringssystem\obj\Debug\net6.0\BiblioteksStyringssystem.pdb
