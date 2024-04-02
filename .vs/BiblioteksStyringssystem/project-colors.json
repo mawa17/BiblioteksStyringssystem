@@ -20,7 +20,12 @@
       "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
       "DisplayName": "Miscellaneous Files",
       "ColorIndex": -1
+    },
+    "f27b629f-dc68-41d5-88d9-bacfe7833941": {
+      "ProjectGuid": "f27b629f-dc68-41d5-88d9-bacfe7833941",
+      "DisplayName": "ConsoleApp",
+      "ColorIndex": 3
     }
   },
-  "NextColorIndex": 3
+  "NextColorIndex": 4
 }
