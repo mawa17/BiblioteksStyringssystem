@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace LibraryManagementSystem.Datatypes
 {
-    public sealed record Book
+    public sealed record Book : BookLog
     {
         
         [DisallowNull]

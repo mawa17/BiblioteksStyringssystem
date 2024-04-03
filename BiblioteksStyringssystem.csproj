@@ -6,6 +6,8 @@
     <Nullable>enable</Nullable>
 	  <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
 	  <GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
+	  <DefineConstants>BUILD_CONSOLE</DefineConstants>
+	  <!--<DefineConstants>BUILD_WINFORMS</DefineConstants>-->
   </PropertyGroup>
 
 </Project>
