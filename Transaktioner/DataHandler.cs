@@ -22,23 +22,25 @@ namespace LibraryManagementSystem.Transactions
         {
         }
 
+        pub
+
         public static void LendBook(Book book, Member member)
         {
-            var memberSearch = DataStore.Members.Search(m => m.Value.Key == member).FirstOrDefault().Value;
+            var memberSearch = DataStore.Members.Search(m => m.Value.Key == member).FirstOrDefault();
             if (memberSearch.Equals(default))
             {
                 DataLogger.Log($"Medlem ved navn: {member.Name} findes ikke", awaitKey: true);
                 return;
             }
 
-            var bookSearch = DataStore.Books.Search(b => b.Value.Value == book).FirstOrDefault().Value;
+            var bookSearch = DataStore.Books.Search(b => b.Value.Value == book).FirstOrDefault();
             if (bookSearch.Equals(default))
             {
                 DataLogger.Log($"Bogen ved titel: {book.Title} eller forfatter: {book.Author} findes ikke", awaitKey: true);
                 return;
             }
 
-            if(memberSearch.Value.Contains(bookSearch.Value))
+            if(memberSearch.Value.Value.Contains(bookSearch.Value.Value))
             {
                 DataLogger.Log($"Medlemmet ved navn: {member.Name} har allreade lånt bogen ved titel: {book.Title}", awaitKey: true);
                 return;
@@ -49,6 +51,11 @@ namespace LibraryManagementSystem.Transactions
                 DataLogger.Log($"Desværre har biblioteket ikke flere bøger med titel: {book.Title} til udlån", awaitKey: true);
                 return;
             }
+
+            DataStore.Books[bookSearch.Key] = new(DataStore.Books[bookSearch.Key].Key - 1, bookSearch.Value.Value); /*Lower book quantity by 1*/
+            DataStore.Members[memberSearch.Key].Value.Add(bookSearch.Value.Value);
+            DataLogger.Log($"Desværre har biblioteket ikke flere bøger med titel: {book.Title} til udlån", awaitKey: true);
+
 
         }
         public static void ReturnBook(Book book, Member member)
