@@ -11,7 +11,7 @@ namespace LibraryManagementSystem.Transactions
     {
         public static void Add<TKey, TValue>(ref Dictionary<TKey, TValue> dict, KeyValuePair<TKey, TValue> kvp) where TKey : notnull => dict.TryAdd(kvp.Key, kvp.Value);
 
-        public static IEnumerable<KeyValuePair<TKey, TValue>> Search2<TKey, TValue>(Dictionary<TKey, TValue> dict, Predicate<KeyValuePair<TKey, TValue>> predicate) where TKey : notnull
+        public static IEnumerable<KeyValuePair<TKey, TValue>> Search<TKey, TValue>(this Dictionary<TKey, TValue> dict, Predicate<KeyValuePair<TKey, TValue>> predicate) where TKey : notnull
         {
             foreach (var kvp in dict)
             {
@@ -22,12 +22,34 @@ namespace LibraryManagementSystem.Transactions
         {
         }
 
-        public static bool LendBook(Book book, Member member)
+        public static void LendBook(Book book, Member member)
         {
-            Search2(DataStore.Books, kvp => kvp.)
-            var searchBook = Search(DataStore.Books, book);
-            if (searchBook.Equals(default)) return false;
-            var bookResult = DataStore.Books.FirstOrDefault(b => b.Value.Value == book);
+            var memberSearch = DataStore.Members.Search(m => m.Value.Key == member).FirstOrDefault().Value;
+            if (memberSearch.Equals(default))
+            {
+                DataLogger.Log($"Medlem ved navn: {member.Name} findes ikke", awaitKey: true);
+                return;
+            }
+
+            var bookSearch = DataStore.Books.Search(b => b.Value.Value == book).FirstOrDefault().Value;
+            if (bookSearch.Equals(default))
+            {
+                DataLogger.Log($"Bogen ved titel: {book.Title} eller forfatter: {book.Author} findes ikke", awaitKey: true);
+                return;
+            }
+
+            if(memberSearch.Value.Contains(bookSearch.Value))
+            {
+                DataLogger.Log($"Medlemmet ved navn: {member.Name} har allreade lånt bogen ved titel: {book.Title}", awaitKey: true);
+                return;
+            }
+
+            if(bookSearch.Key < 1)
+            {
+                DataLogger.Log($"Desværre har biblioteket ikke flere bøger med titel: {book.Title} til udlån", awaitKey: true);
+                return;
+            }
+
         }
         public static void ReturnBook(Book book, Member member)
         {

@@ -7,3 +7,4 @@ C:\Users\marwa\Desktop\Opgaver\BiblioteksStyringssystem\bin\Debug\net6.0\Bibliot
 C:\Users\marwa\Desktop\Opgaver\BiblioteksStyringssystem\obj\Debug\net6.0\BiblioteksStyringssystem.dll
 C:\Users\marwa\Desktop\Opgaver\BiblioteksStyringssystem\obj\Debug\net6.0\ref\BiblioteksStyringssystem.dll
 C:\Users\marwa\Desktop\Opgaver\BiblioteksStyringssystem\obj\Debug\net6.0\BiblioteksStyringssystem.pdb
+C:\Users\marwa\Desktop\Opgaver\BiblioteksStyringssystem\obj\Debug\net6.0\BiblioteksStyringssystem.csproj.AssemblyReference.cache
