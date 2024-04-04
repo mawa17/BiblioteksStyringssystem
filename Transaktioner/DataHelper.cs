@@ -15,10 +15,8 @@ namespace LibraryManagementSystem.Transactions
             }
         }
 
-
         public static void Show<TKey, TValue>(this Dictionary<TKey, TValue> dict, Func<KeyValuePair<TKey, TValue>, bool> predicate, out ushort totalPages, ushort pageIndex = 0, ushort colPerPage = 10, string? format = null) where TKey : notnull
         {
-            
             var searchDict = dict.Search(predicate);
             if (searchDict == null)
             {
@@ -30,16 +28,15 @@ namespace LibraryManagementSystem.Transactions
             foreach (var kvp in searchDict.Skip(pageIndex * colPerPage).Take(colPerPage))
             {
                 StringBuilder sb = new StringBuilder(kvp.ToString());
-                sb.Replace(' ', '\0');
-                sb.Replace(']', '\0');
-                /*
-                sb.Replace('[', '\0');
-                sb.Replace(']', '\0');
-                sb.Replace('}', '\0');
+                sb.Replace(" ", String.Empty);
+                sb.Replace("[", String.Empty);
+                sb.Replace("]", String.Empty);
 
-                sb.Replace(',', '\t');
-                */
-                DataLogger.Log(sb.ToString());
+                string result = Regex.Replace(sb.ToString(), "(\\b\\,(\\w+)(\\{\\w+.)|(\\,\\w+\\=)\\b)", ",");
+                result = Regex.Replace(result, "(\\}.*)", String.Empty);
+
+
+                DataLogger.Log(result);
             }
         }
     }
