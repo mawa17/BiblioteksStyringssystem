@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace LibraryManagementSystem.Transactions
+﻿namespace LibraryManagementSystem.Transactions
 {
     public static class DataLogger
     {
@@ -16,7 +10,7 @@ namespace LibraryManagementSystem.Transactions
             if (awaitKey) Console.ReadKey();
         }
 #elif BUILD_WINFORMS
-#endif
 
+#endif
     }
 }
