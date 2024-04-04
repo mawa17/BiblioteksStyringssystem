@@ -1,23 +1,46 @@
-﻿namespace LibraryManagementSystem.Transactions
+﻿using System.Text;
+using System.Text.RegularExpressions;
+
+namespace LibraryManagementSystem.Transactions
 {
     public static class DataHelper
     {
         public static bool Add<TKey, TValue>(ref Dictionary<TKey, TValue> dict, KeyValuePair<TKey, TValue> kvp) where TKey : notnull => dict.TryAdd(kvp.Key, kvp.Value);
 
-        public static IEnumerable<KeyValuePair<TKey, TValue>> Search<TKey, TValue>(this Dictionary<TKey, TValue> dict, Predicate<KeyValuePair<TKey, TValue>> predicate) where TKey : notnull
+        public static IEnumerable<KeyValuePair<TKey, TValue>> Search<TKey, TValue>(this Dictionary<TKey, TValue> dict, Func<KeyValuePair<TKey, TValue>, bool> predicate) where TKey : notnull
         {
             foreach (var kvp in dict)
             {
                 if (predicate(kvp)) yield return kvp;
             }
         }
-        public static void Show<TData>(in TData data)
+
+
+        public static void Show<TKey, TValue>(this Dictionary<TKey, TValue> dict, Func<KeyValuePair<TKey, TValue>, bool> predicate, out ushort totalPages, ushort pageIndex = 0, ushort colPerPage = 10, string? format = null) where TKey : notnull
         {
-#if BUILD_CONSOLE
+            
+            var searchDict = dict.Search(predicate);
+            if (searchDict == null)
+            {
+                totalPages = 0;
+                return;
+            }
+            totalPages = (ushort)Math.Ceiling((decimal)(searchDict.Count() / colPerPage));
 
-#elif BUILD_WINFORMS
+            foreach (var kvp in searchDict.Skip(pageIndex * colPerPage).Take(colPerPage))
+            {
+                StringBuilder sb = new StringBuilder(kvp.ToString());
+                sb.Replace(' ', '\0');
+                sb.Replace(']', '\0');
+                /*
+                sb.Replace('[', '\0');
+                sb.Replace(']', '\0');
+                sb.Replace('}', '\0');
 
-#endif
+                sb.Replace(',', '\t');
+                */
+                DataLogger.Log(sb.ToString());
+            }
         }
     }
 }

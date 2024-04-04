@@ -29,7 +29,22 @@
             DataHandler.AddBook(new("The Enigma Chronicles",    "Daniel Parker"),   GetRandomQuantity());
             DataHandler.AddBook(new("Sands of Destiny",         "Olivia Hayes"),    GetRandomQuantity());
             DataHandler.AddBook(new("In the Realm of Shadows",  "Matthew Evans"),   GetRandomQuantity());
-            DataHandler.AddBook(new("In the Realm of Shadows",  "Rachel Carter"),   GetRandomQuantity());
+            DataHandler.AddBook(new("The Forgotten Prophecy",   "Rachel Carter"),   GetRandomQuantity());
+
+            DataHandler.AddBook(new("A book", "A author"),   GetRandomQuantity());
+            DataHandler.AddBook(new("A book", "A author"),   GetRandomQuantity());
+            DataHandler.AddBook(new("A book", "A author"),   GetRandomQuantity());
+            DataHandler.AddBook(new("A book", "A author"),   GetRandomQuantity());
+            DataHandler.AddBook(new("A book", "A author"),   GetRandomQuantity());
+            DataHandler.AddBook(new("A book", "A author"),   GetRandomQuantity());
+            DataHandler.AddBook(new("A book", "A author"),   GetRandomQuantity());
+            DataHandler.AddBook(new("A book", "A author"),   GetRandomQuantity());
+            DataHandler.AddBook(new("A book", "A author"),   GetRandomQuantity());
+            DataHandler.AddBook(new("A book", "A author"),   GetRandomQuantity());
+
+    
+
+            DataHandler.AddBook(new("The last book", "the last author"),   GetRandomQuantity());
         }
     }
 }
