@@ -20,27 +20,27 @@
         private static uint GetRandomQuantity(uint maxBooks = 10) => (uint)rand.Next(0, (int)maxBooks);
         public static void PopulateBooks()
         {
-            DataHandler.AddBook(new("The Hidden Key",           "Alex Stone"),      GetRandomQuantity());
-            DataHandler.AddBook(new("Echoes of Eternity",       "Emily Rivers"),    GetRandomQuantity());
-            DataHandler.AddBook(new("Beyond the Horizon",       "Benjamin Knight"), GetRandomQuantity());
-            DataHandler.AddBook(new("Whispers in the Dark",     "Sarah Clarke"),    GetRandomQuantity());
-            DataHandler.AddBook(new("Lost in Time",             "Jason Brooks"),    GetRandomQuantity());
-            DataHandler.AddBook(new("Shadow of the Crescen",    "Natalie Reed"),    GetRandomQuantity());
-            DataHandler.AddBook(new("The Enigma Chronicles",    "Daniel Parker"),   GetRandomQuantity());
-            DataHandler.AddBook(new("Sands of Destiny",         "Olivia Hayes"),    GetRandomQuantity());
-            DataHandler.AddBook(new("In the Realm of Shadows",  "Matthew Evans"),   GetRandomQuantity());
-            DataHandler.AddBook(new("The Forgotten Prophecy",   "Rachel Carter"),   GetRandomQuantity());
+            DataHandler.AddBook(new("Whispers in Twilight"), GetRandomQuantity());
+            DataHandler.AddBook(new("Secrets of the Abyss"), GetRandomQuantity());
+            DataHandler.AddBook(new("Echoes of Eternity"), GetRandomQuantity());
+            DataHandler.AddBook(new("Shadows of the Past"), GetRandomQuantity());
+            DataHandler.AddBook(new("Lost in Reflection"), GetRandomQuantity());
+            DataHandler.AddBook(new("Mysteries Unveiled"), GetRandomQuantity());
+            DataHandler.AddBook(new("Forgotten Memories"), GetRandomQuantity());
+            DataHandler.AddBook(new("Dreams of Tomorrow"), GetRandomQuantity());
+            DataHandler.AddBook(new("Spirits of the Night"), GetRandomQuantity());
+            DataHandler.AddBook(new("Journey to the Unknown"), GetRandomQuantity());
 
-            DataHandler.AddBook(new("A book", "A author"),   GetRandomQuantity());
-            DataHandler.AddBook(new("A book", "A author"),   GetRandomQuantity());
-            DataHandler.AddBook(new("A book", "A author"),   GetRandomQuantity());
-            DataHandler.AddBook(new("A book", "A author"),   GetRandomQuantity());
-            DataHandler.AddBook(new("A book", "A author"),   GetRandomQuantity());
-            DataHandler.AddBook(new("A book", "A author"),   GetRandomQuantity());
-            DataHandler.AddBook(new("A book", "A author"),   GetRandomQuantity());
-            DataHandler.AddBook(new("A book", "A author"),   GetRandomQuantity());
-            DataHandler.AddBook(new("A book", "A author"),   GetRandomQuantity());
-            DataHandler.AddBook(new("A book", "A author"),   GetRandomQuantity());
+            DataHandler.AddBook(new("A book", "A author"), GetRandomQuantity());
+            DataHandler.AddBook(new("A book", "A author"), GetRandomQuantity());
+            DataHandler.AddBook(new("A book", "A author"), GetRandomQuantity());
+            DataHandler.AddBook(new("A book", "A author"), GetRandomQuantity());
+            DataHandler.AddBook(new("A book", "A author"), GetRandomQuantity());
+            DataHandler.AddBook(new("A book", "A author"), GetRandomQuantity());
+            DataHandler.AddBook(new("A book", "A author"), GetRandomQuantity());
+            DataHandler.AddBook(new("A book", "A author"), GetRandomQuantity());
+            DataHandler.AddBook(new("A book", "A author"), GetRandomQuantity());
+            DataHandler.AddBook(new("A book", "A author"), GetRandomQuantity());
 
     
 
