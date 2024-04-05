@@ -7,17 +7,18 @@
         {
             if(arraySplit != default)
             {
-                var array = text.Split(arraySplit);
-                ushort buffer = (ushort)Math.Clamp(text.Length, 0, Console.WindowWidth);
-                for (int i = 0; i < array.Length; i++)
-                {
-                    if(i == 0)
-                    {
-                        Console.WriteLine(array[i]);
-                        continue;
-                    }
+                string[] array = text.Split(Environment.NewLine);
 
-             
+                int colWidth = Console.WindowWidth / array.Length;
+                foreach (string item in array)
+                {
+                    string[] curr = item.Split(arraySplit);
+                    for (int i = 0; i < curr.Length; i++)
+                    {
+                        Console.Write($"{curr[i]}\t\t");
+                        if (curr[i].Length < (1 << 4)) Console.Write($"\t");
+                    }
+                    Console.Write(Environment.NewLine);
                 }
             }
             else

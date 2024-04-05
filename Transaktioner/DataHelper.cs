@@ -34,9 +34,10 @@ namespace LibraryManagementSystem.Transactions
 
                 string result = Regex.Replace(sb.ToString(), "(\\b\\,(\\w+)(\\{\\w+.)|(\\,\\w+\\=)\\b)", ",");
                 result = Regex.Replace(result, "(\\}.*)", String.Empty);
+                result = String.Concat(result.Select(c => Char.IsUpper(c) ? " " + c.ToString() : c.ToString()));
+                result = Regex.Replace(result, "(\\b\\,\\s+\\b)", ",");
 
-
-                DataLogger.Log(result);
+                DataLogger.Log(result, arraySplit: ',');
             }
         }
     }

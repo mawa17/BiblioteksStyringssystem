@@ -10,7 +10,6 @@ namespace LibraryManagementSystem.Datatypes
 {
     public sealed record Book
     {
-        
         [DisallowNull]
         public string Title { get; init; }
 
