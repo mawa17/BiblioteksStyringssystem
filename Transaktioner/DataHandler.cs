@@ -4,6 +4,7 @@ namespace LibraryManagementSystem.Transactions
 {
     public static class DataHandler
     {
+        #region Book
         public static bool AddBook(Book book, uint quantity)
         {
             uint bookId = (uint)(DataStore.Books.Count > 0 ? DataStore.Books.Count + 1 : 0);
@@ -22,7 +23,6 @@ namespace LibraryManagementSystem.Transactions
             if (bookSearch.Equals(default)) return false;
             return DataStore.Books.Remove(bookSearch.Key);
         }
-
         public static void LendBook(Book book, Member member, ushort maxLendDays = 7)
         {
             var memberSearch = DataStore.Members.Search(m => m.Value.Key == member).FirstOrDefault();
@@ -90,6 +90,29 @@ namespace LibraryManagementSystem.Transactions
             }
             DataLogger.Log($"Medlem har nu returneret den udlånte bog med titel: {book.Title}", awaitKey: true);
         }
+        #endregion
 
+        #region Member
+        public static bool AddMember(Member member)
+        {
+            uint memberId = (uint)(DataStore.Members.Count > 0 ? DataStore.Members.Count + 1 : 0);
+            return DataHelper.Add(ref DataStore.Members, new(memberId, new(member, new())));
+        }
+        public static bool RemoveMember(Member member)
+        {
+            var memberSearch = DataStore.Members.Search(m => m.Value.Key == member).FirstOrDefault();
+            if (memberSearch.Equals(default)) return false;
+            return DataStore.Members.Remove(memberSearch.Key);
+        }
+
+        public static bool SetMemberData(Member member, Member newMember)
+        {
+            var memberSearch = DataStore.Members.Search(m => m.Value.Key == member).FirstOrDefault();
+            if (memberSearch.Equals(default)) return false;
+            var x = DataStore.Members[memberSearch.Key].Key;
+            var y = x with { Email = "" };
+            return DataStore.Members.Remove(memberSearch.Key);
+        }
+        #endregion
     }
 }
