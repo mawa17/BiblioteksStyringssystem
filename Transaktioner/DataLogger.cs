@@ -9,14 +9,12 @@
             {
                 string[] array = text.Split(Environment.NewLine);
 
-                int colWidth = Console.WindowWidth / array.Length;
                 foreach (string item in array)
                 {
                     string[] curr = item.Split(arraySplit);
                     for (int i = 0; i < curr.Length; i++)
                     {
-                        Console.Write($"{curr[i]}\t\t");
-                        if (curr[i].Length < (1 << 4)) Console.Write($"\t");
+                        Console.Write($"{curr[i]}".PadRight(30));
                     }
                     Console.Write(Environment.NewLine);
                 }

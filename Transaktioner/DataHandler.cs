@@ -109,9 +109,13 @@ namespace LibraryManagementSystem.Transactions
         {
             var memberSearch = DataStore.Members.Search(m => m.Value.Key == member).FirstOrDefault();
             if (memberSearch.Equals(default)) return false;
-            var x = DataStore.Members[memberSearch.Key].Key;
-            var y = x with { Email = "" };
-            return DataStore.Members.Remove(memberSearch.Key);
+            Member updatedMember = DataStore.Members[memberSearch.Key].Key with 
+            { 
+                Name = newMember?.Name ?? memberSearch.Value.Key.Name,
+                Email = newMember?.Email ?? memberSearch.Value.Key.Email 
+            };
+            DataStore.Members[memberSearch.Key] = new(updatedMember, memberSearch.Value.Value);
+            return true;
         }
         #endregion
     }

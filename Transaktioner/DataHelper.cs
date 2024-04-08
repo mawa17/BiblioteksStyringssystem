@@ -40,5 +40,12 @@ namespace LibraryManagementSystem.Transactions
                 DataLogger.Log(result, arraySplit: ',');
             }
         }
+    
+        public static T? Ask<T>(string question, bool newLine = false) where T : IConvertible
+        {
+            DataLogger.Log(question, newLine);
+            try { return (T?)Convert.ChangeType(Console.ReadLine(), typeof(T)); }
+            catch { DataLogger.Log($"Den indtastede information passer ikke med typen ({nameof(T)})"); return default; }
+        }
     }
 }
