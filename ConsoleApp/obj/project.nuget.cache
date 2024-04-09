@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "dgSpecHash": "cyzHDA3eVqNye1Av4h45OqNYmzwcm1nUvf8MAnJzo8eoWVpV/sALxVMe5sMkFqpcZZ5JDl97HYffCR37R/hV5Q==",
+  "success": false,
+  "projectFilePath": "C:\\Users\\marwa\\Desktop\\Opgaver\\BiblioteksStyringssystem\\ConsoleApp\\ConsoleApp.csproj",
+  "expectedPackageFiles": [],
+  "logs": [
+    {
+      "code": "NU1104",
+      "level": "Error",
+      "message": "Unable to find project 'C:\\Users\\marwa\\Desktop\\Opgaver\\BiblioteksStyringssystem\\BiblioteksStyringssystem\\BiblioteksStyringssystem.csproj'. Check that the project reference is valid and that the project file exists.",
+      "libraryId": "C:\\Users\\marwa\\Desktop\\Opgaver\\BiblioteksStyringssystem\\BiblioteksStyringssystem\\BiblioteksStyringssystem.csproj",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
+}
